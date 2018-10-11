@@ -1,9 +1,29 @@
+const config = require('./data/SiteConfig')
+
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Franklin Handyman Services',
+    description: 'Franklin Handyman Sevices...',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'src',
+        path: `${__dirname}/src/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'assets',
+        path: `${__dirname}/static/`,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
