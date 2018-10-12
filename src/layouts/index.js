@@ -20,6 +20,12 @@ const Layout = ({ children }) => (
               callout
               number
             }
+            email
+            background: imageSharp(id: { regex: "/tools-hero-img.png/" }) {
+              sizes(maxWidth: 1240) {
+                ...GatsbyImageSharpSizes
+              }
+            }
           }
         }
       }
@@ -37,7 +43,10 @@ const Layout = ({ children }) => (
         </Helmet>
         <Header phone={data.site.siteMetadata.phone} />
         <Main>{children}</Main>
-        <Footer phone={data.site.siteMetadata.phone} />
+        <Footer
+          phone={data.site.siteMetadata.phone}
+          email={data.site.siteMetadata.email}
+        />
       </div>
     )}
   />

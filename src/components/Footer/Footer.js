@@ -13,14 +13,23 @@ const FooterWrapper = styled.footer`
 
 export default class Footer extends Component {
   render() {
+    const { phone, email } = this.props
+
     return (
       <FooterWrapper>
         <div className="footer-wrapper">
           <Link to="/">
             <img src={logo} alt="logo" />
           </Link>
+          <a href={`tel:${phone.number}`}>{phone.number}</a>
+          <a href={`mailto:${email}`}>{email}</a>
         </div>
       </FooterWrapper>
     )
   }
+}
+
+Footer.propTypes = {
+  phone: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
 }
