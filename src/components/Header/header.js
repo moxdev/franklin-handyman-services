@@ -2,50 +2,56 @@ import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
 
 import logo from '../../images/fhs-logo.svg'
 
-const HeaderWrapper = styled.div`
+const HeaderWrapper = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #fff;
   padding: 1rem 1.875rem;
-  border-bottom: 2px solid #6f6259;
+  border-bottom: 2px solid var(--brand-color-2);
+  color: #000;
 
   .logo {
     width: 150px;
   }
 
   h1 {
-    color: #54565a;
+    color: var(--brand-color-1);
+  }
+
+  .phone-wrapper {
+    font-size: 2em;
+    color: var(--brand-color-1);
+
+    a {
+      text-decoration: none;
+      color: var(--brand-color-1);
+    }
   }
 `
 
 export default class Header extends Component {
   render() {
-    const { data } = this.props
+    const { phone } = this.props
 
     return (
       <HeaderWrapper>
-        <img className="logo" src={logo} alt="Franklin Handyman Logo" />
+        <Link to="/">
+          <img className="logo" src={logo} alt="Franklin Handyman Logo" />
+        </Link>
 
-        <h1 style={{ margin: 0 }}>
-          <Link
-            to="/"
-            style={{
-              color: 'white',
-              textDecoration: 'none',
-            }}
-          />
-          {data.site.siteMetadata.title}
-        </h1>
+        <div className="phone-wrapper">
+          <span className="callout">{phone.callout}</span>
+          <a href={`tel:${phone.number}`}>{phone.number}</a>
+        </div>
       </HeaderWrapper>
     )
   }
 }
 
 Header.propTypes = {
-  data: PropTypes.node.isRequired,
+  phone: PropTypes.object.isRequired,
 }

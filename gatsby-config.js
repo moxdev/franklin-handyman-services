@@ -3,7 +3,11 @@ const config = require('./data/SiteConfig')
 module.exports = {
   siteMetadata: {
     title: 'Franklin Handyman Services',
-    description: 'Franklin Handyman Sevices...',
+    desc: 'description of site',
+    phone: {
+      callout: config.phone.callout,
+      number: config.phone.number,
+    },
   },
   plugins: [
     'gatsby-plugin-react-helmet',

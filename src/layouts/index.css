@@ -1,3 +1,9 @@
+:root {
+  --brand-color-1: #54565a;
+  --brand-color-2: #6f6259;
+  --brand-color-3: #929497;
+}
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -5,6 +11,7 @@ html {
 }
 body {
   margin: 0;
+  background: var(--brand-color-1);
 }
 article,
 aside,
