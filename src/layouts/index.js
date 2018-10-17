@@ -23,6 +23,13 @@ const Layout = ({ children }) => (
             email
           }
         }
+        heroImage: file(relativePath: { eq: "images/tools-hero-img.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 1000) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     `}
     render={data => (
@@ -37,7 +44,9 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <Header phone={data.site.siteMetadata.phone} />
-        <Main>{children}</Main>
+        <Main headerImage={data.heroImage.childImageSharp.fluid}>
+          {children}
+        </Main>
         <Footer
           phone={data.site.siteMetadata.phone}
           email={data.site.siteMetadata.email}
@@ -52,3 +61,15 @@ Layout.propTypes = {
 }
 
 export default Layout
+
+// export const pageQuery = graphql`
+//   query {
+//     heroImage: file(relativePath: { eq: "images/tools-hero-img.png" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 1000) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//   }
+// `

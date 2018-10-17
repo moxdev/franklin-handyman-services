@@ -6,7 +6,14 @@ import Layout from '../layouts/index'
 
 const IndexPage = props => (
   <Layout>
-    <Img fluid={props.data.heroImage.childImageSharp.fluid} />
+    <Img
+      style={{
+        width: '100%',
+        height: '100%',
+        overflow: 'hidden',
+      }}
+      fluid={props.data.heroImage.childImageSharp.fluid}
+    />
 
     <h1>Franklin Handyman Services</h1>
     <p>
