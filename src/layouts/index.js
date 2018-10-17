@@ -21,11 +21,6 @@ const Layout = ({ children }) => (
               number
             }
             email
-            background: imageSharp(id: { regex: "/tools-hero-img.png/" }) {
-              sizes(maxWidth: 1240) {
-                ...GatsbyImageSharpSizes
-              }
-            }
           }
         }
       }

@@ -1,10 +1,13 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 import Layout from '../layouts/index'
 
-const IndexPage = () => (
+const IndexPage = props => (
   <Layout>
+    <Img fluid={props.data.heroImage.childImageSharp.fluid} />
+
     <h1>Franklin Handyman Services</h1>
     <p>
       Results-oriented and hands-on handyman services professional with over 30
@@ -34,3 +37,15 @@ const IndexPage = () => (
 )
 
 export default IndexPage
+
+export const pageQuery = graphql`
+  query {
+    heroImage: file(relativePath: { eq: "images/tools-hero-img.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
