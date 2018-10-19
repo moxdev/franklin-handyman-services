@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Header from '../components/Header/Header'
 import Main from '../components/Main/Main'
+import Highlights from '../components/Highlights/Highlights'
 import Footer from '../components/Footer/Footer'
 
 import './index.css'
@@ -33,6 +34,27 @@ const Layout = ({ children }) => (
             }
           }
         }
+        boxImage1: file(relativePath: { eq: "images/drill-handyman.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 500, maxHeight: 350) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        boxImage2: file(relativePath: { eq: "images/paint-and-brushes.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 500, maxHeight: 350) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        boxImage3: file(relativePath: { eq: "images/hammer-and-nails.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 500, maxHeight: 350) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     `}
     render={data => (
@@ -47,9 +69,18 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <Header phone={data.site.siteMetadata.phone} />
-        <Main headerImage={data.heroImage.childImageSharp.fluid}>
+        <Main
+          headerImage={data.heroImage.childImageSharp.fluid}
+          phone={data.site.siteMetadata.phone}
+          email={data.site.siteMetadata.email}
+        >
           {children}
         </Main>
+        <Highlights
+          highlightImage1={data.boxImage1.childImageSharp.fluid}
+          highlightImage2={data.boxImage2.childImageSharp.fluid}
+          highlightImage3={data.boxImage3.childImageSharp.fluid}
+        />
         <Footer
           phone={data.site.siteMetadata.phone}
           email={data.site.siteMetadata.email}

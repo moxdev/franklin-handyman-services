@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import logo from '../../images/fhs-logo.svg'
+import ContactInformation from '../ContactInformation/ContactInformation'
 
 const FooterWrapper = styled.footer`
   background: var(--brand-color-1);
@@ -21,8 +22,7 @@ export default class Footer extends Component {
           <Link to="/">
             <img src={logo} alt="logo" />
           </Link>
-          <a href={`tel:${phone.number}`}>{phone.number}</a>
-          <a href={`mailto:${email}`}>{email}</a>
+          <ContactInformation phone={phone} email={email} />
         </div>
       </FooterWrapper>
     )

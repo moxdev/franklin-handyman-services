@@ -13,11 +13,6 @@ h1 {
   columns: 2 300px;
 }
 
-.boxes-list {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+footer a {
+  color: #fff;
 }

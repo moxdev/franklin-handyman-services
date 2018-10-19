@@ -1,37 +1,41 @@
-import React, { Component } from 'react'
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
+import React from 'react'
+import Img from 'gatsby-image'
 import styled from 'styled-components'
 
-import logo from '../../images/fhs-logo.svg'
+const HighlightsList = styled.ul`
+  background-color: #fff;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 
-const FooterWrapper = styled.footer`
-  background: var(--brand-color-1);
-  color: #fff;
-  padding: 1rem 1.875rem;
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      flex: 1 1 33.333%;
+    }
+  }
 `
 
-export default class Footer extends Component {
-  render() {
-    const { phone, email } = this.props
+const Highlights = data => (
+  <HighlightsList>
+    <li>
+      <Img fluid={data.highlightImage1} />
+    </li>
+    <li>
+      <Img fluid={data.highlightImage2} />
+    </li>
+    <li>
+      <Img fluid={data.highlightImage3} />
+    </li>
+  </HighlightsList>
+)
 
-    return (
-      <FooterWrapper>
-        <div className="footer-wrapper">
-          <Link to="/">
-            <img src={logo} alt="logo" />
-          </Link>
-          <a href={`tel:${phone.number}`}>{phone.number}</a>
-          <a href={`mailto:${email}`}>{email}</a>
-        </div>
-      </FooterWrapper>
-    )
-  }
-}
-
-Footer.propTypes = {
-  phone: PropTypes.shape({
-    number: PropTypes.string.isRequired,
-  }).isRequired,
-  email: PropTypes.string.isRequired,
-}
+export default Highlights
