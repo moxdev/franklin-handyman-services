@@ -1,20 +1,11 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import Layout from '../layouts/index'
 
 const IndexPage = props => (
   <Layout>
-    <Img
-      style={{
-        width: '100%',
-        height: '100%',
-        overflow: 'hidden',
-      }}
-      fluid={props.data.heroImage.childImageSharp.fluid}
-    />
-
     <h1>Franklin Handyman Services</h1>
     <p>
       Results-oriented and hands-on handyman services professional with over 30
@@ -24,7 +15,7 @@ const IndexPage = props => (
 
     <h2>Areas of Expertise</h2>
 
-    <ul>
+    <ul className="expertise-list">
       <li>Framing</li>
       <li>Interior/exterior trim</li>
       <li>Doors/windows</li>
@@ -35,21 +26,65 @@ const IndexPage = props => (
       <li>Light duty plumbing &amp; electric</li>
     </ul>
 
-    <p>
-      For more information and estimates: 443.202.2830 z4Franklin@comcast.net
-    </p>
+    <ul className="boxes-list">
+      <li>
+        <Img
+          style={{
+            width: '300px',
+            height: '200px',
+            overflow: 'hidden',
+          }}
+          fluid={props.data.boxImage1.childImageSharp.fluid}
+        />
+      </li>
+      <li>
+        <Img
+          style={{
+            width: '300px',
+            height: '200px',
+          }}
+          fluid={props.data.boxImage2.childImageSharp.fluid}
+        />
+      </li>
+      <li>
+        <Img
+          style={{
+            width: '300px',
+            height: '200px',
+            overflow: 'hidden',
+          }}
+          fluid={props.data.boxImage3.childImageSharp.fluid}
+        />
+      </li>
+    </ul>
 
-    <Link to="/page-2/">Go to page 2</Link>
+    <h2>For more information and estimates:</h2>
+    <a href="tel:443.202.2830">443.202.2830</a>
+    <a href="mailto:z4Franklin@comcast.net">z4Franklin@comcast.net</a>
   </Layout>
 )
 
 export default IndexPage
 
-export const pageQuery = graphql`
+export const query = graphql`
   query {
-    heroImage: file(relativePath: { eq: "images/tools-hero-img.png" }) {
+    boxImage1: file(relativePath: { eq: "images/drill-handyman.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1000) {
+        fluid(maxWidth: 300, maxHeight: 200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    boxImage2: file(relativePath: { eq: "images/paint-and-brushes.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300, maxHeight: 200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    boxImage3: file(relativePath: { eq: "images/hammer-and-nails.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300, maxHeight: 200) {
           ...GatsbyImageSharpFluid
         }
       }

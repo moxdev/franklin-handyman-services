@@ -3,10 +3,13 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-import './index.css'
 import Header from '../components/Header/Header'
 import Main from '../components/Main/Main'
 import Footer from '../components/Footer/Footer'
+
+import './index.css'
+import './fonts.css'
+import './body.css'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -61,15 +64,3 @@ Layout.propTypes = {
 }
 
 export default Layout
-
-// export const pageQuery = graphql`
-//   query {
-//     heroImage: file(relativePath: { eq: "images/tools-hero-img.png" }) {
-//       childImageSharp {
-//         fluid(maxWidth: 1000) {
-//           ...GatsbyImageSharpFluid
-//         }
-//       }
-//     }
-//   }
-// `

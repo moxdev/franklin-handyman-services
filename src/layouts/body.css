@@ -1,0 +1,23 @@
+body {
+  font-family: 'HelveticaNeueLight', san-serif;
+}
+
+h1 {
+  font-family: 'HelveticaNeueBold', san-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.expertise-list {
+  list-style-position: inside;
+  columns: 2 300px;
+}
+
+.boxes-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
