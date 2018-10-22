@@ -1,3 +1,19 @@
+html {
+  font-size: 16px;
+}
+
+@media (min-width: 760px) {
+  html {
+    font-size: 1.1em;
+  }
+}
+
+@media (min-width: 1180px) {
+  html {
+    font-size: 1.2em;
+  }
+}
+
 body {
   font-family: 'HelveticaNeueLight', san-serif;
 }
@@ -5,14 +21,49 @@ body {
 h1 {
   font-family: 'HelveticaNeueBold', san-serif;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
+  position: relative;
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
+hr {
+  background: var(--brand-color-2);
+  width: 50%;
+  height: 2px;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2 {
+  font-family: 'HelveticaNeueBold', san-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* .Main__MainInnerWrapper-ilOVwX {
+  border:  1px solid red;
+} */
+
 .expertise-list {
+  text-align: left;
   list-style-position: inside;
-  columns: 2 300px;
+  columns: 3 200px;
+  margin: 0;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+  /* border: 1px solid red; */
 }
 
 footer a {
   color: #fff;
+}
+
+@media (min-width: 1180px) {
+  .expertise-list {
+    max-width: 900px;
+  }
 }

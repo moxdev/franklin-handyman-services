@@ -3,7 +3,7 @@ module.exports = {
     title: 'Franklin Handyman Services',
     desc: 'Franklin Handyman Services',
     phone: {
-      callout: 'Call now!',
+      callout: 'Call for an estimate!',
       number: '443.202.2830',
     },
     email: 'z4Franklin@comcast.net',

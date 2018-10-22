@@ -1,26 +1,36 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import logo from '../../images/fhs-logo.svg'
 
 const HeaderWrapper = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background: #fff;
   padding: 1rem 1.875rem;
   border-bottom: 2px solid var(--brand-color-2);
   color: #000;
 
-  .logo {
-    width: 150px;
-    margin-bottom: 0;
+  @media (min-width: 575px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  h1 {
-    color: var(--brand-color-1);
+  @media (min-width: 760px) {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+
+  @media (min-width: 1180px) {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
+  .logo img {
+    width: 150px;
+    margin-bottom: 0;
+    display: block;
+    margin-bottom: 1em;
   }
 
   .phone-wrapper {
@@ -28,12 +38,20 @@ const HeaderWrapper = styled.header`
     color: var(--brand-color-1);
 
     .callout {
+      display: none;
       margin-right: 1rem;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      font-family: 'HelveticaNeueBold', san-serif;
+
+      @media (min-width: 960px) {
+        display: inline;
+      }
     }
 
     a {
       text-decoration: none;
-      color: var(--brand-color-1);
+      color: var(--brand-color-2);
     }
   }
 `
@@ -44,9 +62,9 @@ export default class Header extends Component {
 
     return (
       <HeaderWrapper>
-        <Link to="/">
-          <img className="logo" src={logo} alt="Franklin Handyman Logo" />
-        </Link>
+        <div className="logo">
+          <img src={logo} alt="Franklin Handyman Logo" />
+        </div>
 
         <div className="phone-wrapper">
           <span className="callout">{phone.callout}</span>

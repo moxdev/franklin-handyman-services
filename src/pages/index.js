@@ -5,11 +5,14 @@ import Layout from '../layouts/index'
 const IndexPage = () => (
   <Layout>
     <h1>Franklin Handyman Services</h1>
+
     <p>
       Results-oriented and hands-on handyman services professional with over 30
       years of experience across all facets of residential and commercial
       building and repairs.
     </p>
+
+    <hr />
 
     <h2>Areas of Expertise</h2>
 
@@ -23,6 +26,8 @@ const IndexPage = () => (
       <li>Kitchen/bath</li>
       <li>Light duty plumbing &amp; electric</li>
     </ul>
+
+    <hr />
   </Layout>
 )
 

@@ -25,6 +25,7 @@ const Layout = ({ children }) => (
               number
             }
             email
+            copyright
           }
         }
         heroImage: file(relativePath: { eq: "images/tools-hero-img.png" }) {
@@ -84,6 +85,7 @@ const Layout = ({ children }) => (
         <Footer
           phone={data.site.siteMetadata.phone}
           email={data.site.siteMetadata.email}
+          copyright={data.site.siteMetadata.copyright}
         />
       </div>
     )}

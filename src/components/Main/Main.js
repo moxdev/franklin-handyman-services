@@ -13,8 +13,25 @@ const MainInnerWrapper = styled.div`
   color: var(--brand-color-1);
   padding: 2rem 1.875rem;
   max-width: 1100px;
+  padding-top: 3em;
+  padding-bottom: 3em;
   margin-left: auto;
   margin-right: auto;
+
+  @media (min-width: 760px) {
+    text-align: center;
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+
+  @media (min-width: 1180px) {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
+  .contact-wrapper {
+    font-size: 1.5em;
+  }
 `
 
 export default class Main extends Component {

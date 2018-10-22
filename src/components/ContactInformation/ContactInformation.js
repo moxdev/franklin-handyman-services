@@ -3,17 +3,37 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const ContactWrapper = styled.div`
+  div {
+    margin: 0.5em 0;
+  }
+
+  span {
+    display: block;
+    margin-bottom: 0.5em;
+    font-family: 'HelveticaNeueBold', sans-serif;
+  }
+
   a {
     color: inherit;
-    display: block;
     text-decoration: none;
+    color: var(--brand-color-2);
+  }
+
+  .email a {
+    text-decoration: underline;
   }
 `
 
 const ContactInformation = data => (
-  <ContactWrapper>
-    <a href={`tel:${data.phone.number}`}>Phone: {data.phone.number}</a>
-    <a href={`mailto:${data.email}`}>Email: {data.email}</a>
+  <ContactWrapper className="contact-wrapper">
+    <div className="phone">
+      <span>Phone:</span>
+      <a href={`tel:${data.phone.number}`}>{data.phone.number}</a>
+    </div>
+    <div className="email">
+      <span>Email:</span>
+      <a href={`mailto:${data.email}`}>{data.email}</a>
+    </div>
   </ContactWrapper>
 )
 
