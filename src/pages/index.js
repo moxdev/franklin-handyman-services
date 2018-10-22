@@ -2,7 +2,7 @@ import React from 'react'
 
 import Layout from '../layouts/index'
 
-const IndexPage = data => (
+const IndexPage = () => (
   <Layout>
     <h1>Franklin Handyman Services</h1>
     <p>

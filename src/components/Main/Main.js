@@ -44,4 +44,8 @@ export default class Main extends Component {
 Main.propTypes = {
   children: PropTypes.node.isRequired,
   headerImage: PropTypes.object.isRequired,
+  phone: PropTypes.shape({
+    number: PropTypes.string.isRequired,
+  }).isRequired,
+  email: PropTypes.string.isRequired,
 }

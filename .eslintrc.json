@@ -26,6 +26,8 @@
     "prettier/prettier": "error",
     "import/no-extraneous-dependencies": "off",
     "react/jsx-filename-extension": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/no-unused-prop-types": 0,
     "jsx-a11y/anchor-is-valid": [ "error", {
       "components": [ "Link" ],
       "specialLink": [ "hrefLeft", "hrefRight", "to" ],
@@ -33,6 +35,10 @@
     }]
   },
   "settings": {
-    "import/core-modules": []
+    "import/core-modules": [],
+    "react": {
+      "pragma": "React",
+      "version": "16.5.1"
+    }
   }
 }

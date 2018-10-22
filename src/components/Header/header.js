@@ -16,6 +16,7 @@ const HeaderWrapper = styled.header`
 
   .logo {
     width: 150px;
+    margin-bottom: 0;
   }
 
   h1 {
@@ -25,6 +26,10 @@ const HeaderWrapper = styled.header`
   .phone-wrapper {
     font-size: 2em;
     color: var(--brand-color-1);
+
+    .callout {
+      margin-right: 1rem;
+    }
 
     a {
       text-decoration: none;

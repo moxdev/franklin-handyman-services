@@ -12,16 +12,16 @@ const ContactWrapper = styled.div`
 
 const ContactInformation = data => (
   <ContactWrapper>
-    <a href={`tel:${data.phone.number}`}>{data.phone.number}</a>
-    <a href={`mailto:${data.email}`}>{data.email}</a>
+    <a href={`tel:${data.phone.number}`}>Phone: {data.phone.number}</a>
+    <a href={`mailto:${data.email}`}>Email: {data.email}</a>
   </ContactWrapper>
 )
 
 export default ContactInformation
 
-// Footer.propTypes = {
-//   phone: PropTypes.shape({
-//     number: PropTypes.string.isRequired,
-//   }).isRequired,
-//   email: PropTypes.string.isRequired,
-// }
+ContactInformation.propTypes = {
+  phone: PropTypes.shape({
+    number: PropTypes.string.isRequired,
+  }).isRequired,
+  email: PropTypes.string.isRequired,
+}

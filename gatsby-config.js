@@ -1,14 +1,13 @@
-const config = require('./data/SiteConfig')
-
 module.exports = {
   siteMetadata: {
     title: 'Franklin Handyman Services',
-    desc: 'description of site',
+    desc: 'Franklin Handyman Services',
     phone: {
-      callout: config.phone.callout,
-      number: config.phone.number,
+      callout: 'Call now!',
+      number: '443.202.2830',
     },
-    email: config.email,
+    email: 'z4Franklin@comcast.net',
+    copyright: 'Copyright © 2018. Franklin Handyman Services',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
