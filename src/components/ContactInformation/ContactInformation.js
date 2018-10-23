@@ -10,17 +10,20 @@ const ContactWrapper = styled.div`
   span {
     display: block;
     margin-bottom: 0.5em;
-    font-family: 'HelveticaNeueBold', sans-serif;
+    /* font-family: 'HelveticaNeueBold', sans-serif; */
   }
 
   a {
     color: inherit;
     text-decoration: none;
     color: var(--brand-color-2);
+    font-family: 'HelveticaNeueBold', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .email a {
-    text-decoration: underline;
+    /* text-decoration: underline; */
   }
 `
 

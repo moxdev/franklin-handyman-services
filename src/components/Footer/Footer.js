@@ -26,10 +26,29 @@ const FooterWrapper = styled.footer`
     a {
       color: #fff;
     }
+
+    @media (min-width: 780px) {
+      display: flex;
+      justify-content: center;
+
+      div {
+        margin-top: 0;
+      }
+
+      span {
+        margin-bottom: 0;
+      }
+
+      .phone {
+        margin-right: 1.5em;
+      }
+    }
   }
 
   .copyright {
     margin-top: 2em;
+    margin-bottom: 0;
+    font-size: 0.8em;
 
     @media (min-width: 760px) {
       flex: 0 0 100%;
@@ -39,7 +58,7 @@ const FooterWrapper = styled.footer`
 
   @media (min-width: 760px) {
     h2 {
-      max-width: 300px;
+      max-width: 400px;
     }
   }
 `
@@ -52,7 +71,9 @@ export default class Footer extends Component {
       <FooterWrapper>
         <h2>Franklin Handyman Services</h2>
         <ContactInformation phone={phone} email={email} />
-        <p className="copyright">{copyright}</p>
+        <p className="copyright">
+          <em>{copyright}</em>
+        </p>
       </FooterWrapper>
     )
   }

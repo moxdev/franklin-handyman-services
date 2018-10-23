@@ -31,11 +31,27 @@ const HeaderWrapper = styled.header`
     margin-bottom: 0;
     display: block;
     margin-bottom: 1em;
+
+    @media (min-width: 575px) {
+      margin-bottom: 0.5em;
+    }
+
+    @media (min-width: 1180px) {
+      width: 175px;
+    }
+
+    @media (min-width: 1480px) {
+      width: 200px;
+    }
   }
 
   .phone-wrapper {
     font-size: 2em;
     color: var(--brand-color-1);
+
+    @media (min-width: 575px) {
+      margin-top: 0.5em;
+    }
 
     .callout {
       display: none;
@@ -52,6 +68,10 @@ const HeaderWrapper = styled.header`
     a {
       text-decoration: none;
       color: var(--brand-color-2);
+
+      &:hover {
+        color: var(--brand-color-1);
+      }
     }
   }
 `
