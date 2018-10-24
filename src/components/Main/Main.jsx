@@ -30,6 +30,10 @@ const MainInnerWrapper = styled.div`
 
   .contact-wrapper {
     font-size: 1.5em;
+
+    a:hover {
+      color: var(--brand-color-1);
+    }
   }
 `
 

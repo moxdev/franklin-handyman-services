@@ -25,6 +25,10 @@ const FooterWrapper = styled.footer`
   .contact-wrapper {
     a {
       color: #fff;
+
+      &:hover {
+        color: var(--brand-color-3);
+      }
     }
 
     @media (min-width: 780px) {
