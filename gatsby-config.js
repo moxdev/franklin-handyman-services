@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Franklin Handyman Services',
-    desc: 'Franklin Handyman Services',
+    desc:
+      'Results-oriented and hands-on handyman services professional with over 30 years of experience across all facets of residential and commercial building and repairs.',
     phone: {
       callout: 'Call for an estimate!',
       number: '443.202.2830',
@@ -34,10 +35,10 @@ module.exports = {
         name: 'gatsby-starter-default',
         short_name: 'starter',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#54565a',
+        theme_color: '#6f6259',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: 'src/images/favicon.png',
       },
     },
     'gatsby-plugin-offline',
