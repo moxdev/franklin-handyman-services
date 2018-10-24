@@ -81,6 +81,7 @@ export default class Footer extends Component {
 
 Footer.propTypes = {
   phone: PropTypes.shape({
+    callout: PropTypes.string.isRequired,
     number: PropTypes.string.isRequired,
   }).isRequired,
   email: PropTypes.string.isRequired,

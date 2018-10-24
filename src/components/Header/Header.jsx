@@ -96,5 +96,8 @@ export default class Header extends Component {
 }
 
 Header.propTypes = {
-  phone: PropTypes.object.isRequired,
+  phone: PropTypes.shape({
+    callout: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+  }).isRequired,
 }

@@ -4,13 +4,12 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from '../components/Header/Header'
+import Hero from '../components/Hero/Hero'
 import Main from '../components/Main/Main'
 import Highlights from '../components/Highlights/Highlights'
 import Footer from '../components/Footer/Footer'
 
-import './index.css'
-import './fonts.css'
-import './body.css'
+import '../styles/styles.scss'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -69,8 +68,8 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <Header phone={data.site.siteMetadata.phone} />
+        <Hero headerImage={data.heroImage.childImageSharp.fluid} />
         <Main
-          headerImage={data.heroImage.childImageSharp.fluid}
           phone={data.site.siteMetadata.phone}
           email={data.site.siteMetadata.email}
         >
@@ -92,7 +91,7 @@ const Layout = ({ children }) => (
 )
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.array.isRequired,
 }
 
 export default Layout

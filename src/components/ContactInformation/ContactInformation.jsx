@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const ContactWrapper = styled.div`
-  div {
+  .phone,
+  .email {
     margin: 0.5em 0;
   }
 
   span {
     display: block;
     margin-bottom: 0.5em;
-    /* font-family: 'HelveticaNeueBold', sans-serif; */
   }
 
   a {
@@ -21,26 +21,26 @@ const ContactWrapper = styled.div`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
-  .email a {
-    /* text-decoration: underline; */
-  }
 `
 
-const ContactInformation = data => (
-  <ContactWrapper className="contact-wrapper">
-    <div className="phone">
-      <span>Phone:</span>
-      <a href={`tel:${data.phone.number}`}>{data.phone.number}</a>
-    </div>
-    <div className="email">
-      <span>Email:</span>
-      <a href={`mailto:${data.email}`}>{data.email}</a>
-    </div>
-  </ContactWrapper>
-)
+export default class ContactInformation extends Component {
+  render() {
+    const { phone, email } = this.props
 
-export default ContactInformation
+    return (
+      <ContactWrapper className="contact-wrapper">
+        <div className="phone">
+          <span>Phone:</span>
+          <a href={`tel:${phone.number}`}>{phone.number}</a>
+        </div>
+        <div className="email">
+          <span>Email:</span>
+          <a href={`mailto:${email}`}>{email}</a>
+        </div>
+      </ContactWrapper>
+    )
+  }
+}
 
 ContactInformation.propTypes = {
   phone: PropTypes.shape({

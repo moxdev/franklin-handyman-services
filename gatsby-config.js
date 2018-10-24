@@ -11,8 +11,9 @@ module.exports = {
     copyright: 'Copyright © 2018. Franklin Handyman Services',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-styled-components',
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -41,6 +42,6 @@ module.exports = {
         icon: 'src/images/favicon.png',
       },
     },
-    'gatsby-plugin-offline',
+    `gatsby-plugin-offline`,
   ],
 }
