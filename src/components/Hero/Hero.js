@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
@@ -52,34 +52,32 @@ const HeroWrapper = styled.section`
   }
 `
 
-export default class Hero extends Component {
-  render() {
-    const { headerImage } = this.props
+const Hero = data => (
+  <HeroWrapper>
+    <Img
+      style={{
+        width: '100%',
+        overflow: 'hidden',
+        position: 'relative',
+        zIndex: '1',
+      }}
+      fluid={data.headerImage}
+    />
+    <div className="title-wrapper">
+      <h1>Franklin Handyman Services</h1>
+      <span>
+        Results-oriented and hands-on handyman services professional with over
+        30 years of experience across all facets of residential and commercial
+        building and repairs.
+      </span>
+    </div>
+  </HeroWrapper>
+)
 
-    return (
-      <HeroWrapper>
-        <Img
-          style={{
-            width: '100%',
-            overflow: 'hidden',
-            position: 'relative',
-            zIndex: '1',
-          }}
-          fluid={headerImage}
-        />
-        <div className="title-wrapper">
-          <h1>Franklin Handyman Services</h1>
-          <span>
-            Results-oriented and hands-on handyman services professional with
-            over 30 years of experience across all facets of residential and
-            commercial building and repairs.
-          </span>
-        </div>
-      </HeroWrapper>
-    )
-  }
-}
+export default Hero
 
 Hero.propTypes = {
-  headerImage: PropTypes.object.isRequired,
+  data: PropTypes.shape({
+    headerImage: PropTypes.object.isRequired,
+  }),
 }

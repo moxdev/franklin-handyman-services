@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import { ThemeProvider } from 'styled-components'
+import theme from './theme'
 
 import Header from '../components/Header/Header'
 import Hero from '../components/Hero/Hero'
@@ -58,34 +60,39 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <div>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: `${data.site.siteMetadata.desc}` },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <Header phone={data.site.siteMetadata.phone} />
-        <Hero headerImage={data.heroImage.childImageSharp.fluid} />
-        <Main
-          phone={data.site.siteMetadata.phone}
-          email={data.site.siteMetadata.email}
-        >
-          {children}
-        </Main>
-        <Highlights
-          highlightImage1={data.boxImage1.childImageSharp.fluid}
-          highlightImage2={data.boxImage2.childImageSharp.fluid}
-          highlightImage3={data.boxImage3.childImageSharp.fluid}
-        />
-        <Footer
-          phone={data.site.siteMetadata.phone}
-          email={data.site.siteMetadata.email}
-          copyright={data.site.siteMetadata.copyright}
-        />
-      </div>
+      <ThemeProvider theme={theme}>
+        <div>
+          <Helmet
+            title={data.site.siteMetadata.title}
+            meta={[
+              {
+                name: 'description',
+                content: `${data.site.siteMetadata.desc}`,
+              },
+            ]}
+          >
+            <html lang="en" />
+          </Helmet>
+          <Header phone={data.site.siteMetadata.phone} />
+          <Hero headerImage={data.heroImage.childImageSharp.fluid} />
+          <Main
+            phone={data.site.siteMetadata.phone}
+            email={data.site.siteMetadata.email}
+          >
+            {children}
+          </Main>
+          <Highlights
+            highlightImage1={data.boxImage1.childImageSharp.fluid}
+            highlightImage2={data.boxImage2.childImageSharp.fluid}
+            highlightImage3={data.boxImage3.childImageSharp.fluid}
+          />
+          <Footer
+            phone={data.site.siteMetadata.phone}
+            email={data.site.siteMetadata.email}
+            copyright={data.site.siteMetadata.copyright}
+          />
+        </div>
+      </ThemeProvider>
     )}
   />
 )

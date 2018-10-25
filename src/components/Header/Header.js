@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
@@ -7,7 +7,7 @@ import logo from '../../images/fhs-logo.svg'
 const HeaderWrapper = styled.header`
   background: #fff;
   padding: 1rem 1.875rem;
-  border-bottom: 2px solid var(--brand-color-2);
+  border-bottom: 2px solid ${props => props.theme.color_brand_2};
   color: #000;
 
   @media (min-width: 575px) {
@@ -47,7 +47,7 @@ const HeaderWrapper = styled.header`
 
   .phone-wrapper {
     font-size: 2em;
-    color: var(--brand-color-1);
+    color: ${props => props.theme.color_brand_1};
 
     @media (min-width: 575px) {
       margin-top: 0.5em;
@@ -67,37 +67,35 @@ const HeaderWrapper = styled.header`
 
     a {
       text-decoration: none;
-      color: var(--brand-color-2);
+      color: ${props => props.theme.color_brand_2};
 
       &:hover {
-        color: var(--brand-color-1);
+        color: ${props => props.theme.color_brand_1};
       }
     }
   }
 `
 
-export default class Header extends Component {
-  render() {
-    const { phone } = this.props
+const Header = data => (
+  <HeaderWrapper>
+    <div className="logo">
+      <img src={logo} alt="Franklin Handyman Logo" />
+    </div>
 
-    return (
-      <HeaderWrapper>
-        <div className="logo">
-          <img src={logo} alt="Franklin Handyman Logo" />
-        </div>
+    <div className="phone-wrapper">
+      <span className="callout">{data.phone.callout}</span>
+      <a href={`tel:${data.phone.number}`}>{data.phone.number}</a>
+    </div>
+  </HeaderWrapper>
+)
 
-        <div className="phone-wrapper">
-          <span className="callout">{phone.callout}</span>
-          <a href={`tel:${phone.number}`}>{phone.number}</a>
-        </div>
-      </HeaderWrapper>
-    )
-  }
-}
+export default Header
 
 Header.propTypes = {
-  phone: PropTypes.shape({
-    callout: PropTypes.string.isRequired,
-    number: PropTypes.string.isRequired,
-  }).isRequired,
+  data: PropTypes.shape({
+    phone: PropTypes.shape({
+      callout: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    }).isRequired,
+  }),
 }

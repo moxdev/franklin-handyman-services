@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import ContactInformation from '../ContactInformation/ContactInformation'
 
 const FooterWrapper = styled.footer`
-  background: var(--brand-color-1);
+  background: ${props => props.theme.color_brand_1};
   color: #fff;
   padding: 1rem 1.875rem;
 
@@ -27,7 +27,7 @@ const FooterWrapper = styled.footer`
       color: #fff;
 
       &:hover {
-        color: var(--brand-color-3);
+        color: ${props => props.theme.color_brand_3};
       }
     }
 
@@ -67,27 +67,25 @@ const FooterWrapper = styled.footer`
   }
 `
 
-export default class Footer extends Component {
-  render() {
-    const { phone, email, copyright } = this.props
+const Footer = data => (
+  <FooterWrapper>
+    <h2>Franklin Handyman Services</h2>
+    <ContactInformation phone={data.phone} email={data.email} />
+    <p className="copyright">
+      <em>{data.copyright}</em>
+    </p>
+  </FooterWrapper>
+)
 
-    return (
-      <FooterWrapper>
-        <h2>Franklin Handyman Services</h2>
-        <ContactInformation phone={phone} email={email} />
-        <p className="copyright">
-          <em>{copyright}</em>
-        </p>
-      </FooterWrapper>
-    )
-  }
-}
+export default Footer
 
 Footer.propTypes = {
-  phone: PropTypes.shape({
-    callout: PropTypes.string.isRequired,
-    number: PropTypes.string.isRequired,
-  }).isRequired,
-  email: PropTypes.string.isRequired,
-  copyright: PropTypes.string.isRequired,
+  data: PropTypes.shape({
+    phone: PropTypes.shape({
+      callout: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    }).isRequired,
+    email: PropTypes.string.isRequired,
+    copyright: PropTypes.string.isRequired,
+  }),
 }

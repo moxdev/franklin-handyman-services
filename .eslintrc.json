@@ -26,6 +26,7 @@
     "import/no-extraneous-dependencies": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-one-expression-per-line": "off",
+    "react/require-default-props": "off",
     "prettier/prettier": "error",
     "jsx-a11y/anchor-is-valid": [ "error", {
       "components": [ "Link" ],
@@ -34,10 +35,6 @@
     }]
   },
   "settings": {
-    "import/core-modules": [],
-    "react": {
-      "pragma": "React",
-      "version": "16.5.1"
-    }
+    "import/core-modules": []
   }
 }
