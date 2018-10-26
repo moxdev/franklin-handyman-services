@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { media } from '../../utils/style.utils'
+
 import ContactInformation from '../ContactInformation/ContactInformation'
 
 const MainWrapper = styled.main`
@@ -17,16 +19,16 @@ const MainInnerWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
 
-  @media (min-width: 760px) {
+  ${media.small`
     text-align: center;
     padding-left: 2.25rem;
     padding-right: 2.25rem;
-  }
+  `};
 
-  @media (min-width: 1180px) {
+  ${media.large`
     padding-left: 3.5rem;
     padding-right: 3.5rem;
-  }
+  `};
 
   .contact-wrapper {
     font-size: 1.5em;

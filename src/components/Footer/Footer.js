@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { media } from '../../utils/style.utils'
 
 import ContactInformation from '../ContactInformation/ContactInformation'
 
@@ -9,18 +10,22 @@ const FooterWrapper = styled.footer`
   color: #fff;
   padding: 1rem 1.875rem;
 
-  @media (min-width: 760px) {
+  ${media.small`
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     padding-left: 2.25rem;
     padding-right: 2.25rem;
-  }
 
-  @media (min-width: 1180px) {
+    h2 {
+      max-width: 400px;
+    }
+  `};
+
+  ${media.large`
     padding-left: 3.5rem;
     padding-right: 3.5rem;
-  }
+  `};
 
   .contact-wrapper {
     a {
@@ -54,16 +59,10 @@ const FooterWrapper = styled.footer`
     margin-bottom: 0;
     font-size: 0.8em;
 
-    @media (min-width: 760px) {
+    ${media.small`
       flex: 0 0 100%;
       text-align: center;
-    }
-  }
-
-  @media (min-width: 760px) {
-    h2 {
-      max-width: 400px;
-    }
+    `};
   }
 `
 

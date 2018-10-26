@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { media } from '../../utils/style.utils'
 
 import logo from '../../images/fhs-logo.svg'
 
@@ -10,21 +11,21 @@ const HeaderWrapper = styled.header`
   border-bottom: 2px solid ${props => props.theme.color_brand_2};
   color: #000;
 
-  @media (min-width: 575px) {
+  ${media.mobile`
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+  `};
 
-  @media (min-width: 760px) {
+  ${media.small`
     padding-left: 2.25rem;
     padding-right: 2.25rem;
-  }
+  `};
 
-  @media (min-width: 1180px) {
+  ${media.large`
     padding-left: 3.5rem;
     padding-right: 3.5rem;
-  }
+  `};
 
   .logo img {
     width: 150px;
@@ -32,37 +33,37 @@ const HeaderWrapper = styled.header`
     display: block;
     margin-bottom: 1em;
 
-    @media (min-width: 575px) {
+    ${media.mobile`
       margin-bottom: 0.5em;
-    }
+    `};
 
-    @media (min-width: 1180px) {
+    ${media.large`
       width: 175px;
-    }
+    `};
 
-    @media (min-width: 1480px) {
+    ${media.xlarge`
       width: 200px;
-    }
+    `};
   }
 
   .phone-wrapper {
     font-size: 2em;
     color: ${props => props.theme.color_brand_1};
 
-    @media (min-width: 575px) {
+    ${media.mobile`
       margin-top: 0.5em;
-    }
+    `};
 
     .callout {
       display: none;
       margin-right: 1rem;
       font-size: 1.3rem;
       text-transform: uppercase;
-      font-family: 'HelveticaNeueBold', san-serif;
+      font-family: ${props => props.theme.font_bold};
 
-      @media (min-width: 960px) {
+      ${media.medium`
         display: inline;
-      }
+      `};
     }
 
     a {

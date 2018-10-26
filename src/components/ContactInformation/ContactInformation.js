@@ -17,9 +17,8 @@ const ContactWrapper = styled.div`
     color: inherit;
     text-decoration: none;
     color: ${props => props.theme.color_brand_2};
-    font-family: 'HelveticaNeueBold', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-family: ${props => props.theme.font_bold};
+    ${props => props.theme.font_smooth};
   }
 `
 

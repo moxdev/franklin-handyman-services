@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
+import { media } from '../../utils/style.utils'
 
 const HighlightsList = styled.section`
   background-color: #fff;
@@ -11,7 +12,7 @@ const HighlightsList = styled.section`
     margin: 0;
     padding: 0;
 
-    @media (min-width: 768px) {
+    ${media.mobile`
       display: flex;
       justify-content: center;
       align-items: center;
@@ -19,7 +20,7 @@ const HighlightsList = styled.section`
       li {
         flex: 1 1 33.333%;
       }
-    }
+    `};
   }
 
   li {

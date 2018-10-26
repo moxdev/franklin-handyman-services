@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
+import { media } from '../../utils/style.utils'
 
 const HeroWrapper = styled.section`
   position: relative;
@@ -9,13 +10,13 @@ const HeroWrapper = styled.section`
   .gatsby-image-wrapper {
     height: 450px;
 
-    @media (min-width: 1180px) {
+    ${media.large`
       height: 500px;
-    }
+    `};
 
-    @media (min-width: 1460px) {
+    ${media.xlarge`
       height: 550px;
-    }
+    `};
 
     &:after {
       content: '';
@@ -31,6 +32,7 @@ const HeroWrapper = styled.section`
   }
 
   .title-wrapper {
+    max-width: 650px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -40,15 +42,14 @@ const HeroWrapper = styled.section`
     text-shadow: 0 0 20px #000;
     text-align: center;
     letter-spacing: 1px;
-    max-width: 650px;
 
-    @media (min-width: 1460px) {
-      max-width: 800px;
+    ${media.xlarge`
+      min-width: 800px;
 
       span {
         font-size: 1.25em;
       }
-    }
+    `};
   }
 `
 
