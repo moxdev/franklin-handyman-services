@@ -62,7 +62,7 @@ const Hero = data => (
         position: 'relative',
         zIndex: '1',
       }}
-      fluid={data.headerImage}
+      fluid={data.heroImage}
     />
     <div className="title-wrapper">
       <h1>Franklin Handyman Services</h1>

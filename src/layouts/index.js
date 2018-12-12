@@ -6,9 +6,7 @@ import { ThemeProvider } from 'styled-components'
 import theme from './theme'
 
 import Header from '../components/Header/Header'
-import Hero from '../components/Hero/Hero'
 import Main from '../components/Main/Main'
-import Highlights from '../components/Highlights/Highlights'
 import Footer from '../components/Footer/Footer'
 
 import '../styles/styles.scss'
@@ -74,18 +72,16 @@ const Layout = ({ children }) => (
             <html lang="en" />
           </Helmet>
           <Header phone={data.site.siteMetadata.phone} />
-          <Hero headerImage={data.heroImage.childImageSharp.fluid} />
           <Main
+            heroImage={data.heroImage.childImageSharp.fluid}
             phone={data.site.siteMetadata.phone}
             email={data.site.siteMetadata.email}
-          >
-            {children}
-          </Main>
-          <Highlights
             highlightImage1={data.boxImage1.childImageSharp.fluid}
             highlightImage2={data.boxImage2.childImageSharp.fluid}
             highlightImage3={data.boxImage3.childImageSharp.fluid}
-          />
+          >
+            {children}
+          </Main>
           <Footer
             phone={data.site.siteMetadata.phone}
             email={data.site.siteMetadata.email}
